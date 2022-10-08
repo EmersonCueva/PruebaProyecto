@@ -9,6 +9,9 @@ public class PruebaProyecto2 {
     
         System.out.println("Prueba proyecto 2");
         System.out.println("Prueba desde perspectiva compañeros");
+        
+        
+        System.out.println("Prueba con compañeros");
     }
 
 }
