@@ -1,6 +1,8 @@
 
 package pruebaproyecto2;
 
+import Interfaz.InicioSesion;
+
 
 public class PruebaProyecto2 {
 
@@ -13,6 +15,9 @@ public class PruebaProyecto2 {
         
         System.out.println("Prueba con compañeros");
        
+        
+        InicioSesion acceso = new InicioSesion();
+        acceso.setVisible(true);
        //Prueba123
   
        //Cambio numero 3
