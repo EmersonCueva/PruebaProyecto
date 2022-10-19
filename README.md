@@ -1,2 +1,2 @@
 # PruebaProyecto
-Prueba del proyecto de esd
+Proyecto de la materia de Estructuras de Datos 
