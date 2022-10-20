@@ -37,6 +37,9 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtIniciar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,7 +57,7 @@ public class InicioSesion extends javax.swing.JFrame {
             .addGap(0, 620, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 620));
 
         jPanel2.setBackground(new java.awt.Color(33, 45, 62));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,6 +73,7 @@ public class InicioSesion extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 50, -1));
 
         txtUsuario.setBackground(new java.awt.Color(33, 45, 62));
+        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +83,7 @@ public class InicioSesion extends javax.swing.JFrame {
         jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 200, 40));
 
         txtPass.setBackground(new java.awt.Color(33, 45, 62));
+        txtPass.setForeground(new java.awt.Color(255, 255, 255));
         txtPass.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 200, 40));
 
@@ -89,7 +94,8 @@ public class InicioSesion extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
 
         txtIniciar.setBackground(new java.awt.Color(33, 45, 62));
-        txtIniciar.setForeground(new java.awt.Color(33, 45, 62));
+        txtIniciar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        txtIniciar.setForeground(new java.awt.Color(255, 255, 255));
         txtIniciar.setText("Iniciar");
         txtIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +103,13 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txtIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 160, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user_30px.png"))); // NOI18N
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lock_24px.png"))); // NOI18N
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 450, 610));
 
@@ -132,7 +145,7 @@ public class InicioSesion extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -160,7 +173,10 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton txtIniciar;
