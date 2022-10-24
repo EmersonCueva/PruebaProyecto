@@ -1,0 +1,2 @@
+1;Emer Alexander;Cueva Carbajal;6564-6564;cc21045@ues.edu.sv;11-09-2001;VIP;Activo
+2;Alex Emer;Cuevas Carvajal;6532-6564;cc045@ues.edu.sv;09-11-2010;Casual;Activo
