@@ -35,7 +35,17 @@ public class BDClientes {
         }
         return clientes;
 }
-    
-
+    //Metodo para registrar los clientes en la base de datos txt
+public boolean registrarCliente(Clientes c){
+    EstadoArchivo archivo = new EstadoArchivo ("clientes.txt");
+    return archivo.registrar(c.getId() + ";"
+            + c.getNombre() + ";"
+            + c.getApellidos() + ";"
+            + c.getTelefono() + ";"
+            + c.getCorreo() + ";"
+            + c.getFecha() + ";"
+            + c.getTipoSuscripcion() + ";"
+            + c.getEstado());
+}
     
 }

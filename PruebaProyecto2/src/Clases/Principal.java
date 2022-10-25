@@ -5,6 +5,7 @@
  */
 package Clases;
 
+import Interfaz.InicioSesion;
 import java.io.FileNotFoundException;
 
 /**
@@ -14,8 +15,8 @@ import java.io.FileNotFoundException;
 public class Principal {
     
     public static void main(String args[]) throws FileNotFoundException{
-        ListaClientes l=new ListaClientes();
-        l.cargarClientes();
-        l.imprimir();
+      
+         InicioSesion acceso = new InicioSesion();
+        acceso.setVisible(true);
     }
 }

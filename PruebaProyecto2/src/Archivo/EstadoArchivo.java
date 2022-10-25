@@ -8,6 +8,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.LinkedList;
@@ -61,6 +63,26 @@ public class EstadoArchivo {
         }
         return lineasTxt;
     }
+    
+    //Metodo para registrar clientes en el archivo
+    public boolean registrar(String linea){
+        File archivo = obtenerArchivo(); //Obtenemos el archivo de texto
+        try{
+        if (archivo.exists()) { //Verificar si existe el archivo
+            //Registramos informacion en el archivo
+            FileWriter fw = new FileWriter(archivo,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            pw.println(linea);//Escribir el texto que es recibido en el archivo
+            pw.flush();
+            pw.close();
+            return true;
+        }
+        }catch (IOException error){
+            error.printStackTrace();
+        }
+        return false;
+        }
     
     
 }
