@@ -1,6 +1,7 @@
 //Modelo para ingresar datos en la tabla
 package Clases;
 import java.io.FileNotFoundException;
+import javax.swing.DefaultListModel;
 import javax.swing.table.AbstractTableModel;
 
 public class ModeloClientes extends AbstractTableModel{
@@ -96,9 +97,23 @@ public class ModeloClientes extends AbstractTableModel{
         this.fireTableDataChanged();
     }
     
-    public void eliminarProducto(int ind){
+        
+        public void eliminarClientes(int ind){
         clientes.eliminar(ind);
         this.fireTableDataChanged();
-    }
+         }
+        //Funcion para validar la existencia del registro del id en la lista
+        public boolean ExisteEnLista(DefaultListModel modelLista, String dto){
+            boolean bandera = false;
+            for (int i =0;i<modelLista.getSize();i++){
+                bandera=true;
+            }
+            return bandera;
+        }
 
+    public void removeTableModelListener(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
+
+    

@@ -7,6 +7,7 @@ package Interfaz;
 
 import Clases.BDClientes;
 import Clases.Clientes;
+import Clases.ModeloClientes;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -14,7 +15,9 @@ import javax.swing.JOptionPane;
  *
  * @author emers
  */
+
 public class IngresarDatos extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form IngresarDatos
@@ -139,23 +142,65 @@ public class IngresarDatos extends javax.swing.JFrame {
        int id;
        String nombre,apellido,telefono,correo,fecha,sus,estado;
     
-         id = Integer.parseInt(txtId.getText());
-         nombre = this.txtNombre.getText();
-        apellido = this.txtApellido.getText();
-        telefono = this.txtTelefono.getText();
-        correo = this.txtCorreo.getText();
-         fecha = this.txtFecha.getText();
-         sus = jSuscripcion.getSelectedItem().toString();
-        estado = "Activo";
-        Clientes c = new Clientes(id,nombre,apellido,telefono,correo,fecha,sus,estado);
-        BDClientes bd=new BDClientes();
-         bd.registrarCliente(c);
-      
-       
-        
-        this.setVisible(false);
+       if(txtNombre.getText().isEmpty() || txtTelefono.getText().isEmpty() ||txtApellido.getText().isEmpty()
+               || txtCorreo.getText().isEmpty() || txtFecha.getText().isEmpty() || txtId.getText().isEmpty()){
+               JOptionPane.showMessageDialog(this, "Por favor no dejar los campos vacios");
+       }else{
+
+                if (!validarNumeros(txtId.getText())){
+                    JOptionPane.showMessageDialog(this, "Ingresar solo numeros en el campo de ID");
+                  
+                }else{
+                   
+                    if(!validarLetras(txtNombre.getText())){
+                    JOptionPane.showMessageDialog(this, "Ingresar solo letras en el campo de Nombre");
+
+                    }else{
+                        if(!validarLetras(txtApellido.getText())){
+                        JOptionPane.showMessageDialog(this, "Ingresar solo letras en el campo de Apellido");
+                        }else{
+                            if(!validarNumeros(txtTelefono.getText())){
+                            JOptionPane.showMessageDialog(this, "Ingresar solo numeros en el campo de telefono con el formato: 12345678");
+                             }else{
+                                if(validarLetras(txtFecha.getText())){
+                                JOptionPane.showMessageDialog(this, "Ingresar fecha en formato: dd/mm/aaaa");
+                                }else{        
+                                 id = Integer.parseInt(txtId.getText());
+                                  
+                                  Clientes c;
+                                            
+                                 nombre = this.txtNombre.getText();
+                                  apellido = this.txtApellido.getText();
+                                  telefono = this.txtTelefono.getText();
+                                  correo = this.txtCorreo.getText();
+                                  fecha = this.txtFecha.getText();
+                                  sus = jSuscripcion.getSelectedItem().toString();
+                                  estado = "Activo";
+                                   c = new Clientes(id,nombre,apellido,telefono,correo,fecha,sus,estado);
+                                 
+                                  BDClientes bd=new BDClientes();
+                                   
+                                  bd.registrarCliente(c);
+                                  this.setVisible(false);
+                                    
+                                }
+                            }
+                        }
+                   
+                    }
+                }           
+       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public static boolean validarNumeros(String dato){
+        return dato.matches("[0-9]*");
+    }
+    
+    public static boolean validarLetras(String date){
+        return date.matches("[a-zA-Z]*");
+    }
+    
+    
     /**
      * @param args the command line arguments
      */

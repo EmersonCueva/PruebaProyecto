@@ -5,11 +5,13 @@
  */
 package Interfaz;
 
+import Clases.Clientes;
 import Clases.ModeloClientes;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import Interfaz.IngresarDatos;
+import javax.swing.JOptionPane;
 /**
  *
  * @author emers
@@ -170,7 +172,16 @@ public class GestionSuscripcion extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnCargarActionPerformed
-
+    
+    public void ValidarIngresos(int id) throws FileNotFoundException{
+        ModeloClientes modelo = new ModeloClientes();
+        for (int i = 0; i<jTable1.getRowCount(); i++) {
+            if (jTable1.getValueAt(i, 2).equals(id)) {
+                JOptionPane.showMessageDialog(this,"El ID ya esta en uso");
+                modelo.removeTableModelListener(i);
+            }
+        }
+    }
     /**
      * @param args the command line arguments
      */
